@@ -6,7 +6,7 @@
 ## Примеры
 В качестве изображения была передана следующая картинка:  
 <img src="./assets/original.jpg" alt="original" height="400"/>  
-Полученный двуслойный арт:
+Полученный двуслойный арт:  
 <img src="./assets/2layers.png" alt="2 layers" height="400"/>  
-Полученный трёхслойный арт:
+Полученный трёхслойный арт:  
 <img src="./assets/3layers.png" alt="3 layers" height="400"/>  
