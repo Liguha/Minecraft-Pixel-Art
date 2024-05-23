@@ -5,8 +5,8 @@
 Программа работает на Windows и использует библиотеку OpenCV. Результат сохраняется в папку image.  
 ## Примеры
 В качестве изображения была передана следующая картинка:  
-<img src="./assets/original.jpg" alt="original" height="400"/>
+<img src="./assets/original.jpg" alt="original" height="400"/>  
 Полученный двуслойный арт:
-<img src="./assets/2layers.png" alt="2 layers" height="500"/>
+<img src="./assets/2layers.png" alt="2 layers" height="500"/>  
 Полученный трёхслойный арт:
-<img src="./assets/3layers.png" alt="3 layers" height="500"/>
+<img src="./assets/3layers.png" alt="3 layers" height="500"/>  
