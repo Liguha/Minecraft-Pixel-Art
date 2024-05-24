@@ -63,7 +63,7 @@ int main()
     for (int i = 0; i < glass_files.size(); i++)
         glasses.push_back(file2block(glass_files[i]));
 
-    int n = 5;                      // количество слоёв арта
+    int n = 2;                      // количество слоёв арта
     color_generator gen;
     gen.set_layers(n);
     gen.set_blocks(blocks);
@@ -71,7 +71,7 @@ int main()
     gen.init();
 
     Mat3f img = imread("test.jpg"); // название изображения
-    string folder = "5layers";      // название папки с функциями
+    string folder = "image";        // название папки с функциями
     CreateDirectory(wstring(folder.begin(), folder.end()).c_str(), NULL);
     flip(img, img, 1);
     img.convertTo(img, CV_32F, 1. / 255, 0);
