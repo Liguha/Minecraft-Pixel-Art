@@ -10,3 +10,5 @@
 <img src="./assets/2layers.png" alt="2 layers" height="400"/>  
 Полученный трёхслойный арт:  
 <img src="./assets/3layers.png" alt="3 layers" height="400"/>  
+Полученный пятислойный арт (из-за настроек графики стёкла плохо стыкуются на границах чанков):  
+<img src="./assets/5layers.png" alt="5 layers" height="400"/>  
