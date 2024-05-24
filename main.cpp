@@ -63,7 +63,7 @@ int main()
     for (int i = 0; i < glass_files.size(); i++)
         glasses.push_back(file2block(glass_files[i]));
 
-    int n = 3;                      // количество слоёв арта
+    int n = 5;                      // количество слоёв арта
     color_generator gen;
     gen.set_layers(n);
     gen.set_blocks(blocks);
@@ -71,13 +71,15 @@ int main()
     gen.init();
 
     Mat3f img = imread("test.jpg"); // название изображения
+    string folder = "5layers";      // название папки с функциями
+    CreateDirectory(wstring(folder.begin(), folder.end()).c_str(), NULL);
     flip(img, img, 1);
     img.convertTo(img, CV_32F, 1. / 255, 0);
     cvtColor(img, img, COLOR_BGR2Lab);
     const int lim = 65000;
     int file_cnt = 1;
     int k = 0;
-    ofstream file("image\\draw" + to_string(file_cnt) + ".mcfunction");
+    ofstream file(folder + "\\draw" + to_string(file_cnt) + ".mcfunction");
     for (int r = 0; r < img.rows; r++)
     {
         for (int c = 0; c < img.cols; c++)
@@ -96,10 +98,12 @@ int main()
             if (k > lim)
             {
                 file_cnt++;
-                file << "setblock ~-2 ~ ~ minecraft:command_block 1 0 {Command:\"" << "function image:draw" << file_cnt << "\"}" << endl;
-                file << "setblock ~-2 ~1 ~ minecraft:redstone_block";
+                file << "setblock ~ ~ ~ minecraft:air" << endl;
+                file << "setblock ~ ~ ~ minecraft:command_block 1 0 {Command:\"" << "function " << folder << ":draw" << file_cnt << "\"}" << endl;
+                file << "setblock ~ ~1 ~ minecraft:air" << endl;
+                file << "setblock ~ ~1 ~ minecraft:redstone_block";
                 file.close();
-                file.open("image\\draw" + to_string(file_cnt) + ".mcfunction");
+                file.open(folder + "\\draw" + to_string(file_cnt) + ".mcfunction");
                 k = 0;
             }
         }
